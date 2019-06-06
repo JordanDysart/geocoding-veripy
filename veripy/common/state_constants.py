@@ -1,7 +1,5 @@
 
 
-
-
 class StateConstants(object):
     """docstring for StateConstants."""
 
@@ -12,9 +10,3 @@ class StateConstants(object):
     DEBUG_TO_FILE    = True
     PATH_TO_LOG      = "veripy/logs/"
     LOG_NAME         = "debug.log"
-
-    def loggingToFile(isEnabled):
-        FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-        logging.basicConfig(format=FORMAT)
-        d = {'clientip': '192.168.0.1', 'user': 'fbloggs'}
-        logging.warning('Protocol problem: %s', 'connection reset', extra=d)

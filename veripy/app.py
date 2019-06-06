@@ -7,20 +7,20 @@
 # Purpose: I just want to know how to do this shit maaan.
 #
 
+from veripy.common.logger import Logger
 from veripy.common.state_constants import StateConstants
 from veripy.data.filemanager import FileManager
 
+
 import sys
-
-
+import os
 
 def run():
 
+    logger = Logger(True)
 
-
-
-    print("we are running")
-    log.debug("We are up and running:")
-    log.debug("Filename: ", sys.argv[0])
-    fileManager = FileManager(12)
-    fileManager.promptLive()
+    logger.debug("we are logging")
+    logger.debug("We are up and running:")
+    logger.debug("Filename: {}".format( sys.argv[0]))
+    fileManager = FileManager("/veripy/resources/dummy.data")
+    fileManager.verifyFile()
