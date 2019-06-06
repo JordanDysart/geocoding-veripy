@@ -1,3 +1,3 @@
 FROM python:3
 ADD . /
-CMD [ "python", "./src/handlefile.py" ]
+CMD [ "python3","-m", "./veripy" ]
