@@ -21,14 +21,21 @@ class FileManager(object):
     def __init__(self, pathToFile):
         super(FileManager, self).__init__()
 
-        self.pathToFile = pathToFile
+        self.localPathToFile = pathToFile
         self.logger.debug("is this going to cause issues")
 
+    def getFilePath():
+        return getcwd() + self.localPathToFile
+
+
+# This should be a test!
     def verifyFile(self):
+        self.logger.debug("")
         self.logger.debug(getcwd())
-        self.logger.debug(self.pathToFile)
-        file_path = getcwd() + self.pathToFile
-        self.logger.debug(file_path)
+        self.logger.debug(self.localPathToFile)
+
+
+        self.logger.debug(getFilePath)
         fo = open(file_path, 'rb')
         self.logger.debug("Name of the file: {}".format(fo.name))
         self.logger.debug("Closed or not : {}".format( fo.closed))
@@ -37,9 +44,9 @@ class FileManager(object):
 
     def cloneFile(self):
 
-        file_path = normpath(join(getcwd(), self.pathToFile))
+        file_path = normpath(join(getcwd(), self.localPathToFile))
         fo = open(file_path, 'rb')
 
-        path = "clone_{}".format(self.pathToFile)
+        path = "clone_{}".format(self.localPathToFile)
         file_path = normpath(join(getcwd(), path))
         newfo = open(file_path)
