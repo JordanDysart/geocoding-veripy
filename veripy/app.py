@@ -12,6 +12,7 @@
 from veripy.common.logger import Logger
 from veripy.common.state_constants import StateConstants
 from veripy.data.filemanager import FileManager
+from veripy.common.api import GAPI
 
 import sys
 import os
@@ -22,14 +23,14 @@ BASE      = "https://maps.google.com/"
 GEOCODE   = "maps/api/geocode/"
 
 REQUEST   = "https://maps.google.com/maps/api/geocode/json?components=postal_code:75018&key=api_key"
-GAPI      = "AIzaSyDxF6scdJ7TVSFWafqyo8bzMcT_r8cTobk"
+
 FILE_PATH = 'python-verify-geo-csv-test-data.csv'
 
 
 # List all of the values in the array
 SETUP_PROMPT = "[{0}] {1}"
 
-
+print(GAPI)
 def run():
 
     logger = Logger(True)
@@ -53,7 +54,7 @@ def run():
 
         print("Moving on...")
 
-    with open(FILE_PATH, newline='\n') as csvfile:
+    with open(FILE_PATH, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         copycat = "copy_" + FILE_PATH
 
