@@ -2,3 +2,6 @@
 *.log
 *.pyc
 api.py
+test-net.py
+names.csv
+copy_python-verify-geo-csv-test-data.csv

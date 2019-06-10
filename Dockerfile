@@ -1,3 +1,5 @@
 FROM python:3
 ADD . /
-CMD [ "python3","-m", "./veripy" ]
+RUN pip install requests
+# CMD [ "python3","-m", "./veripy" ]
+CMD [ "python3", "test-net.py" ]
